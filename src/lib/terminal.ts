@@ -16,11 +16,11 @@ function cycleTheme(): string {
   // Update CSS custom property
   document.documentElement.style.setProperty('--accent', newColor);
   
-  const colorNames = ['neon-green', 'electric-blue', 'magenta', 'cyber-purple'];
+  const colorNames = ['electric-blue',  'magenta','neon-green', 'cyber-purple'];
   return `Theme changed to: ${colorNames[currentThemeIndex]}`;
 }
 
-// Main command parser
+
 export function runCommand(cmd: string): string[] {
   const command = cmd.trim().toUpperCase();
   
@@ -40,7 +40,7 @@ export function runCommand(cmd: string): string[] {
       
     case 'ABOUT':
       return [
-        'GDG Terminal System v0.0.1',
+        'sudo/dev/crash v0.0.1',
         'React + Vite + TypeScript',
         'Retro-cyber interface',
         'Built for exploration and discovery'
