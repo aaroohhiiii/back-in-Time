@@ -70,6 +70,7 @@ body {
   padding: 20px;
   background-color: rgba(57, 255, 20, 0.05);
   min-height: 200px;
+  position: relative;
 }
 
 .status-rail-container {
@@ -97,6 +98,7 @@ body {
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  
 }
 
 .glyph {
@@ -243,6 +245,16 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+}
+
+/* Reduce vertical spacing between intro texts inside the terminal-window */
+.terminal-window h1, 
+.terminal-window h2, 
+.terminal-window h3, 
+.terminal-window p { 
+  margin: 0.25em 0; 
+  line-height: 1.3; 
 }
 
 .terminal-output {
@@ -252,6 +264,18 @@ body {
   overflow-y: auto;
   max-height: 300px;
   padding-bottom: 10px;
+}
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: rgba(57, 255, 20, 0.1);
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
 }
 
 .output-line {
@@ -306,6 +330,36 @@ body {
 .terminal-input::placeholder {
   color: var(--fg);
   opacity: 0.5;
+}
+
+/* Pixel Cat Companion */
+.pixel-cat {
+  position: absolute;
+  bottom: 30px;
+  right: 8px;
+  text-align: center;
+  z-index: 10;
+}
+
+.pixel-cat .cat-ascii {
+  font-family: monospace;
+  font-size: 01rem;
+  line-height: 1.2;
+  color: var(--accent);
+  text-shadow: 0 0 4px var(--accent);
+  white-space: pre;
+  margin-bottom: 4px;
+}
+
+.cat-speech {
+  margin-top: 4px;
+  font-size: 1rem;
+  color: var(--accent);
+  animation: flicker 3s infinite;
+  font-family: monospace;
+  max-width: 120px;
+  word-wrap: break-word;
+  line-height: 1.2;
 }
 
 /* Scanlines effect */
@@ -835,4 +889,23 @@ body.no-glitch {
   .modal-content {
     animation: none;
   }
+}
+
+.glyph-img {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 0 4px var(--accent));
+  opacity: 0.85;
+  padding: 5%;
+  border-radius: 30px;
+  cursor:-webkit-grab;
+}
+
+
+.status-glyphs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: flicker 3s linear infinite;
 }
