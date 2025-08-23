@@ -794,6 +794,11 @@ a:focus {
   animation: none;
 }
 
+/* Ensure body has no-glitch class when reduced motion is preferred */
+body.no-glitch {
+  --scanline-opacity: 0.02;
+}
+
 /* Prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {

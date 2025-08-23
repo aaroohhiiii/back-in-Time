@@ -3,10 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Dead Channel</title>
+    <title>404 - SIGNAL LOST</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400;700&family=VT323&display=swap');
+        
+        :root {
+            --bg: #0a0a0a;
+            --fg: #d9ffe1;
+            --neon-green: #39FF14;
+            --electric-blue: #00C2FF;
+            --magenta: #FF00A0;
+            --cyber-purple: #7A00FF;
+            --accent: var(--neon-green);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Share Tech Mono', 'VT323', ui-monospace, monospace;
+            background-color: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Noise background effect */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 194, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 160, 0.1) 0%, transparent 50%);
+            animation: noise-drift 20s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes noise-drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-10px, -5px) rotate(1deg); }
+            50% { transform: translate(5px, -10px) rotate(-1deg); }
+            75% { transform: translate(-5px, 5px) rotate(0.5deg); }
+        }
+        
+        .error-container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            padding: 40px;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .error-code {
+            font-size: 8em;
+            font-weight: bold;
+            color: var(--accent);
+            text-shadow: 
+                0 0 20px var(--accent),
+                0 0 40px var(--accent),
+                0 0 60px var(--accent);
+            margin-bottom: 20px;
+            animation: glitch-404 3s ease-in-out infinite;
+            position: relative;
+        }
+        
+        @keyframes glitch-404 {
+            0%, 100% { transform: skew(0deg); }
+            10% { transform: skew(2deg); }
+            20% { transform: skew(-1deg); }
+            30% { transform: skew(1.5deg); }
+            40% { transform: skew(-0.5deg); }
+            50% { transform: skew(1deg); }
+            60% { transform: skew(-1.5deg); }
+            70% { transform: skew(0.5deg); }
+            80% { transform: skew(-2deg); }
+            90% { transform: skew(1deg); }
+        }
+        
+        .error-code::before,
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .error-code::before {
+            color: var(--magenta);
+            animation: glitch-offset-1 2s ease-in-out infinite;
+            transform: translate(-2px, -1px);
+        }
+        
+        .error-code::after {
+            color: var(--electric-blue);
+            animation: glitch-offset-2 2.5s ease-in-out infinite;
+            transform: translate(2px, 1px);
+        }
+        
+        @keyframes glitch-offset-1 {
+            0%, 100% { transform: translate(-2px, -1px); }
+            50% { transform: translate(-4px, -2px); }
+        }
+        
+        @keyframes glitch-offset-2 {
+            0%, 100% { transform: translate(2px, 1px); }
+            50% { transform: translate(4px, 2px); }
+        }
+        
+        .error-message {
+            font-size: 2em;
+            color: var(--fg);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: flicker 4s ease-in-out infinite;
+        }
+        
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.4; }
+        }
+        
+        .status-info {
+            font-size: 1.2em;
+            color: var(--accent);
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .return-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .return-link:hover {
+            background-color: var(--neon-green);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .console-hint {
+            font-size: 1em;
+            color: var(--fg);
+            opacity: 0.6;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 4px;
+            background-color: rgba(57, 255, 20, 0.05);
+            display: none;
+        }
+        
+        .console-hint.show {
+            display: block;
+            animation: fade-in 0.5s ease-out;
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(57, 255, 20, 0.03) 2px,
+                rgba(57, 255, 20, 0.03) 4px
+            );
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 0;
+            animation: scanline-drift 15s ease-in-out infinite;
+        }
+        
+        @keyframes scanline-drift {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .error-code,
+            .error-code::before,
+            .error-code::after {
+                animation: none;
+            }
+            
+            .error-message {
+                animation: none;
+            }
+            
+            .scanlines {
+                animation: none;
+            }
+            
+            body::before {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Dead Channel</h1>
-    <p>This page will be refined later.</p>
+    <div class="scanlines"></div>
+    
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-message">SIGNAL LOST</div>
+        <div class="status-info">CHANNEL: DEAD // FREQUENCY: OFFLINE</div>
+        
+        <a href="/" class="return-link">RETURN TO TERMINAL</a>
+        
+        <div class="console-hint" id="consoleHint">
+            <span style="color: var(--accent);">💻</span>
+            open developer console
+        </div>
+    </div>
+    
+    <script>
+        // Check if this is a real 404 (static hosting)
+        if (window.location.pathname !== '/404.html') {
+            // This is a real 404, suggest returning to home
+            console.log('404 ERROR: Page not found. Returning to /');
+            // Don't auto-redirect, let user choose
+        }
+        
+        // Decoy: Show console hint after 5 seconds
+        setTimeout(() => {
+            const hint = document.getElementById('consoleHint');
+            if (hint) {
+                hint.classList.add('show');
+            }
+        }, 5000);
+        
+        // Add some console noise for the decoy
+        console.log('404: Dead channel detected');
+        console.log('404: Signal lost in transmission');
+        console.log('404: No unlock codes here - this is just a decoy!');
+        console.log('404: The real secret is in /vault');
+    </script>
 </body>
 </html>
