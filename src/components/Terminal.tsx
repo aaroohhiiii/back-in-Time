@@ -52,6 +52,19 @@ function Terminal() {
     }
   }, [currentIntroLine, currentChar, prefersReducedMotion]);
 
+  // Add no-glitch class to body when reduced motion is preferred
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      document.body.classList.add('no-glitch');
+    } else {
+      document.body.classList.remove('no-glitch');
+    }
+
+    return () => {
+      document.body.classList.remove('no-glitch');
+    };
+  }, [prefersReducedMotion]);
+
   // Auto-scroll to bottom
   useEffect(() => {
     if (outputRef.current) {
@@ -144,17 +157,19 @@ function Terminal() {
         <form onSubmit={handleSubmit} className="terminal-input-form">
           <div className="terminal-prompt">
             <span className="prompt-symbol">$</span>
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="terminal-input"
-              placeholder="Enter command..."
-              autoComplete="off"
-              spellCheck="false"
-            />
+                               <input
+                     ref={inputRef}
+                     type="text"
+                     value={input}
+                     onChange={(e) => setInput(e.target.value)}
+                     onKeyDown={handleKeyDown}
+                     className="terminal-input"
+                     placeholder="Enter command..."
+                     autoComplete="off"
+                     spellCheck="false"
+                     aria-label="Terminal command input"
+                     role="textbox"
+                   />
           </div>
         </form>
       )}

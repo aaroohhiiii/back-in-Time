@@ -4,7 +4,7 @@ import StatusRail from '../components/StatusRail'
 function Home() {
   return (
     <div className="home-layout">
-      <div className="terminal-intro">
+      <main className="terminal-intro">
         <h1 className="crt">HOME TERMINAL</h1>
         <p>Welcome to the GDG system.</p>
         
@@ -23,11 +23,11 @@ function Home() {
         <div className="terminal-placeholder">
           <Terminal />
         </div>
-      </div>
+      </main>
       
-      <div className="status-rail-container">
+      <aside className="status-rail-container">
         <StatusRail />
-      </div>
+      </aside>
     </div>
   )
 }
