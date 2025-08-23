@@ -1,24 +1,4 @@
-// function StatusRail() {
-//   return (
-//     <div className="status-rail" role="complementary" aria-label="System status indicators">
-//       <div className="status-glyphs" aria-hidden="true">
-//         <span className="glyph">■</span>
-//         <span className="glyph">◆</span>
-//         <span className="glyph">▣</span>
-//         <span className="glyph">░</span>
-//         <span className="glyph">▒</span>
-//         <span className="glyph">▓</span>
-//       </div>
-      
-//       <div className="tooltip-container" aria-hidden="true">
-//         {/* Tooltips will be added here later */}
-//       </div>
-//     </div>
-//   )
-// }
 
-// export default StatusRail
-// import penguin from '../assets/penguin.png';
 
 import { useEffect, useRef, useState } from "react";
 
@@ -67,16 +47,9 @@ export default function StatusRail() {
       onBlur={() => setActive(false)}
     >
       <div className="status-glyphs" aria-hidden="true">
-        {/* <span className="glyph" >■</span>
-        i */}
-        <img src="/penguin.png" alt=""  className="glyph-img glyph" />
-        <video src="/girl.mp4"   autoPlay loop muted playsInline className="glyph-img glyph" />
-        <img src="/wifi.png" alt=""  className="glyph-img glyph" />
-        <img src="/telephone.png" alt=""  className="glyph-img glyph" />
-        <img src="/warning.png" alt=""  className="glyph-img glyph" />
-
-
-        
+        <video src="/scientist.mp4" autoPlay loop muted playsInline className="glyph-img glyph glitch" />
+        <video src="/ghost.mp4" autoPlay loop muted playsInline className="glyph-img glyph glitch" />
+        <video src="/girl2.mp4" autoPlay loop muted playsInline className="glyph-img glyph glitch" />
       </div>
 
       {showHint && (
