@@ -230,7 +230,7 @@ function Vault() {
     // expose unlock(code) globally
     (window as any).unlock = (code: string) => {
       try {
-        if (code === "02_@pandasplit_1234") {
+        if (code === "MDJfQHBhbmRhc3BsaXRfMTIzNA==") {
           setIsUnlocked(true);
           fireRetroConfetti(); // 🎉 trigger confetti on success
           console.log("VAULT UNLOCKED: Access granted to 02_@pandasplit_1234");
@@ -247,7 +247,7 @@ function Vault() {
     };
 
     // console hint
-    console.log("AUTH CHALLENGE: run unlock('02_@pandasplit_1234')");
+    console.log("AUTH CHALLENGE: run unlock('MDJfQHBhbmRhc3BsaXRfMTIzNA==')");
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
@@ -305,7 +305,15 @@ function Vault() {
       </h1>
 
       {showInstruction && (
-        <p className="instruction">AUTH CHALLENGE: run unlock('02_@pandasplit_1234')</p>
+        <h1 className="instruction">you should <span className='glitch crt'style={{  backgroundColor: '#000000',
+          color: '#ffffff',
+          fontFamily: '"Fira Code", monospace',
+          padding: '2px 6px',
+          margin: '2px',
+          borderRadius: '4px',
+          display: 'inline-block',
+          fontSize: '2rem',}}
+      >Inspect</span> all issues asap !</h1>
       )}
     </main>
   );
