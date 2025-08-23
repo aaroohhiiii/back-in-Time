@@ -1,7 +1,7 @@
 function StatusRail() {
   return (
-    <div className="status-rail">
-      <div className="status-glyphs">
+    <div className="status-rail" role="complementary" aria-label="System status indicators">
+      <div className="status-glyphs" aria-hidden="true">
         <span className="glyph">■</span>
         <span className="glyph">◆</span>
         <span className="glyph">▣</span>
