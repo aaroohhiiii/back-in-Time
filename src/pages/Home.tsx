@@ -10,7 +10,7 @@ function Home() {
         }}> Welcome,<span className='glitch' style={{color:'yellow'}}> Champ</span>.</h1>
         <p style={{fontSize: '1.5rem' ,
           padding: '0px'
-        }}>The terminal hold <span  style={{color:'red',
+        }}>The terminal holds <span  style={{color:'red',
           fontStyle:'italic'
         }}>Secrets.</span> Will u make it through  ?</p>
         
