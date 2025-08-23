@@ -7,6 +7,19 @@ const INTRO_TEXT = [
   'Type HELP for commands'
 ];
 
+// Cat taunts that cycle every 5 seconds
+const CAT_TAUNTS = [
+  
+  "404 courage not found",
+  "Lmao AI is defo taking over you dumbass",
+  "what did u expect ? 2+2 ",
+  "give up now, pet me instead",
+  " you can't make it through ",
+  "nice try, human" ,
+
+
+];
+
 function Terminal() {
   const [output, setOutput] = useState<string[]>([]);
   const [input, setInput] = useState('');
@@ -15,11 +28,21 @@ function Terminal() {
   const [introComplete, setIntroComplete] = useState(false);
   const [currentIntroLine, setCurrentIntroLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
+  const [currentTaunt, setCurrentTaunt] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Cycle through cat taunts every 5 seconds
+  useEffect(() => {
+    const tauntInterval = setInterval(() => {
+      setCurrentTaunt(prev => (prev + 1) % CAT_TAUNTS.length);
+    }, 5000);
+    
+    return () => clearInterval(tauntInterval);
+  }, []);
 
   // Typewriter effect for intro
   useEffect(() => {
@@ -173,6 +196,23 @@ function Terminal() {
           </div>
         </form>
       )}
+      
+      {/* Pixel Art Cat Companion */}
+      <div className="pixel-cat">
+        <div className="cat-ascii">
+          {`   .--.  
+  |o_o | 
+  |:_/ | 
+ //   \ \ 
+(|     | )
+/'\_   _/'\
+\___)=(___/`}
+  
+        </div>
+        <div className="cat-speech">
+          {CAT_TAUNTS[currentTaunt]}
+        </div>
+      </div>
     </div>
   )
 }

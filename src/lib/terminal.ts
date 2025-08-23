@@ -1,9 +1,9 @@
 // Available theme colors
 const THEME_COLORS = [
-  'var(--neon-green)',
   'var(--electric-blue)', 
   'var(--magenta)',
-  'var(--cyber-purple)'
+  'var(--cyber-purple)',
+  'var(--neon-green)',
 ];
 
 let currentThemeIndex = 0;
@@ -16,7 +16,7 @@ function cycleTheme(): string {
   // Update CSS custom property
   document.documentElement.style.setProperty('--accent', newColor);
   
-  const colorNames = ['electric-blue',  'magenta','neon-green', 'cyber-purple'];
+  const colorNames = ['electric-blue',  'magenta','cyber-purple','neon-green', ];
   return `Theme changed to: ${colorNames[currentThemeIndex]}`;
 }
 

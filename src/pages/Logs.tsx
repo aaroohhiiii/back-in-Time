@@ -19,7 +19,7 @@ function Logs() {
       '[2024-01-15 09:42:23] CYPHER: Encryption modules active',
       '[2024-01-15 09:42:24] STATUS: All systems operational',
       '[2024-01-15 09:42:25] MONITOR: Real-time surveillance active',
-      '[2024-01-15 09:42:26] ALERT: No anomalies detected'
+      '[2024-01-15 09:42:26] ALERT: No anomalies detected Maybe "U" could "CTRL" this situation !`'
     ];
 
     // If filter=cypher, add the special guidance line
@@ -35,9 +35,9 @@ function Logs() {
       <h1 className="crt">SYSTEM LOGS</h1>
       <p>Accessing system logs...</p>
       
-      <div className="logs-container" role="table" aria-label="System log entries">
+      <div className="logs-container " role="table" aria-label="System log entries">
         <div className="logs-header" role="row">
-          <span className="log-timestamp" role="columnheader">TIMESTAMP</span>
+          <span className="log-timestamp glitch" role="columnheader">TIMESTAMP</span>
           <span className="log-module" role="columnheader">MODULE</span>
           <span className="log-message" role="columnheader">MESSAGE</span>
         </div>
