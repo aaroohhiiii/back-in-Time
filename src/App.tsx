@@ -28,9 +28,9 @@ function App() {
 
   return (
     <Router>
-      <div className="terminal-window">
+      <div className=" terminal-window" style={{gap: '10px'}}>
         <header className="terminal-header">
-          <div className="terminal-title">GDG TERMINAL</div>
+          <div className="terminal-title">sudo/dev/crash</div>
           <div className="terminal-meta">
             <span>BUILD: 0.0.1</span>
             <span>STATUS: ONLINE</span>
@@ -43,19 +43,27 @@ function App() {
         </main>
         
         <footer className="terminal-footer">
-          <pre className="mono">
-{`[SYSTEM] [READY] [AUTH] [SCAN] [VAULT] [LOG]`}
+          <pre className="mono  playfair-footer outfit-footer corinthia-regular corinthia-bold quintessential-regular sarpanch-regular">
+{/* {` From my keyboard to your screen — Aarohi`}
+ */}
+ <p className="code-block-words"  >
+ 
+  <span>©</span>
+  <span>2025</span>
+  <span>Aarohi</span>
+  <span>|</span>
+  <span>All</span>
+  <span>Rights</span>
+  <span>Reserved</span>
+
+
+</p>
+
+
           </pre>
           <div className="footer-ascii" aria-hidden="true">
             <pre className="ascii-art">
-{`
-  ██████╗ ██████╗  ██████╗ 
-  ██╔══██╗██╔══██╗██╔════╝ 
-  ██║  ██║██║  ██║██║  ███╗
-  ██║  ██║██║  ██║██║   ██║
-  ██████╔╝██████╔╝╚██████╔╝
-  ╚═════╝ ╚═════╝  ╚═════╝ 
-`}
+{}
             </pre>
           </div>
         </footer>

@@ -6,7 +6,7 @@
   --electric-blue: #00C2FF;
   --magenta: #FF00A0;
   --cyber-purple: #7A00FF;
-  --accent: var(--neon-green);
+  --accent: var(--electric-blue);
   --scanline-opacity: 0.08;
 }
 
@@ -52,7 +52,7 @@ body {
 /* Home layout */
 .home-layout {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 250px;
   gap: 20px;
   width: 100%;
   height: 100%;
@@ -80,7 +80,7 @@ body {
 
 /* StatusRail component */
 .status-rail {
-  width: 180px;
+  width: 220px;
   border: 1px solid var(--accent);
   border-radius: 4px;
   padding: 15px;
@@ -96,15 +96,14 @@ body {
 .status-glyphs {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
-  
 }
 
 .glyph {
   font-size: 1.2em;
   color: var(--accent);
-  animation: glyph-pulse 2s ease-in-out infinite;
+  animation:  2s ease-in-out infinite;
   opacity: 0.8;
 }
 
@@ -892,20 +891,104 @@ body.no-glitch {
 }
 
 .glyph-img {
-  width: 100px;
-  height: 100px;
+  width: 190px;
+  height: 190px;
   filter: drop-shadow(0 0 4px var(--accent));
   opacity: 0.85;
-  padding: 5%;
-  border-radius: 30px;
-  cursor:-webkit-grab;
+  border-radius: 15px;
+  cursor: -webkit-grab;
+  object-fit: cover;
 }
 
 
-.status-glyphs {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: flicker 3s linear infinite;
+
+
+
+
+
+
+
+/* footer font work */
+
+.playfair-footer {
+  font-family: "Playfair", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+
+.outfit-footer {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.corinthia-regular {
+  font-family: "Corinthia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.corinthia-bold {
+  font-family: "Corinthia", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quintessential-regular {
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.sarpanch-regular {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sarpanch-medium {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.sarpanch-semibold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sarpanch-bold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sarpanch-extrabold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sarpanch-black {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.code-block-words span {
+  background-color: #000000;   /* dark code-like bg */
+  color: #ffffff;             /* pink text */
+  font-family: "Fira Code", monospace;
+  padding: 2px 6px;
+  margin: 2px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 1rem;
 }
