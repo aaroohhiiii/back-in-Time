@@ -1,4 +1,40 @@
-// Available theme colors
+
+
+// import { useRef } from "react";
+let firedConfetti = false ; // prevent duplicate pops
+const prefersReducedMotion = window
+.matchMedia("(prefers-reduced-motion: reduce)")
+.matches;
+
+async function fireRetroConfetti() {
+    if (prefersReducedMotion || firedConfetti) return;
+    firedConfetti = true;
+
+    const { default: confetti } = await import("canvas-confetti");
+
+    const colors = ["#39FF14", "#00C2FF", "#FF00A0", "#7A00FF", "#FFFFFF"];
+    const base = {
+      colors,
+      scalar: 0.9,
+      ticks: 200,
+      spread: 60,
+      startVelocity: 45,
+      gravity: 0.9,
+      origin: { y: 0.4 },
+    };
+
+    
+    confetti({ ...base, particleCount: 90 });
+   
+    confetti({ ...base, particleCount: 45, angle: 60, origin: { x: 0, y: 0.6 } });
+    confetti({ ...base, particleCount: 45, angle: 120, origin: { x: 1, y: 0.6 } });
+    // spicy tail
+    setTimeout(() => confetti({ ...base, particleCount: 35, spread: 88, startVelocity: 55 }), 180);
+  }
+  // 
+
+
+
 const THEME_COLORS = [
   'var(--electric-blue)', 
   'var(--magenta)',
@@ -8,12 +44,11 @@ const THEME_COLORS = [
 
 let currentThemeIndex = 0;
 
-// Cycle through theme colors and update CSS variable
+
 function cycleTheme(): string {
   currentThemeIndex = (currentThemeIndex + 1) % THEME_COLORS.length;
   const newColor = THEME_COLORS[currentThemeIndex];
   
-  // Update CSS custom property
   document.documentElement.style.setProperty('--accent', newColor);
   
   const colorNames = ['electric-blue',  'magenta','cyber-purple','neon-green', ];
@@ -34,7 +69,7 @@ export function runCommand(cmd: string): string[] {
         '  STATUS   - System status',
         '  THEME    - Cycle accent colors',
         '  CLEAR    - Clear terminal',
-        '',
+        'CREEP - Activatev just the right background music ',
         
       ];
       
@@ -66,6 +101,19 @@ export function runCommand(cmd: string): string[] {
     case 'THEME':
       return [cycleTheme()];
       
+    case '02_@PANDASPLIT_1234':
+      fireRetroConfetti() ;
+    return [
+        'Way to go Champ! i hope winning tastes great!'
+        ]
+     case 'CREEP':
+     const audio = new Audio('/creepy.mp3');
+     audio.loop = true ;
+     audio.play().catch(()=>{})
+      return [
+        'Music does sound nice !'
+        ]
+        
     default:
       return [`Unknown command: ${cmd}`, 'Type HELP for available commands'];
   }
