@@ -33,7 +33,7 @@ A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Fea
 ## 🔐 Secret Key Methodology
 
 ### The Three-Step Process
-1. **intial Anomaly** : Hover your the vudeos to discover first hint.
+1. **intial Anomaly** : Hover your the videos to discover first hint.
 1. **Discovery**: Navigate to `/logs?filter=cypher` to find the breadcrumb
 2. **Console Access**: Open browser developer console (F12)
 3. **Unlock**: Execute `unlock('ZXJpc19uZW9uX2tleQ==')` in the console
@@ -166,4 +166,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Remember**: The real unlock is in `/vault`, not in the 404 page! The 404 is just a decoy to keep you exploring. 🕵️‍♂️
+
 
