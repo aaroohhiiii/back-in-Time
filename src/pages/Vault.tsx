@@ -270,7 +270,7 @@ function Vault() {
     return (
       <main className="mono vault-unlocked" role="main" aria-label="Vault unlocked">
         <h1 className="glitch crt" data-text="SECRET KEY: 02_@pandasplit_1234">
-          SECRET KEY: 02_@pandasplit_1234
+          SECRET KEY: 02_@pandasplit_1234.Copy to terminal to win !
         </h1>
 
         <div className="secret-key-display">
