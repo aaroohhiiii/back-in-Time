@@ -69,7 +69,7 @@ export function runCommand(cmd: string): string[] {
         '  STATUS   - System status',
         '  THEME    - Cycle accent colors',
         '  CLEAR    - Clear terminal',
-        'CREEP - Activatev just the right background music ',
+        '  CREEP - Activate just the right     background music ',
         
       ];
       

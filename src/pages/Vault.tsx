@@ -224,7 +224,7 @@ function Vault() {
     if (prefersReducedMotion) document.body.classList.add("no-glitch");
     else document.body.classList.remove("no-glitch");
 
-    // show instruction after 5s
+    // show instruction after 5
     const instructionTimer = setTimeout(() => setShowInstruction(true), 5000);
 
     // expose unlock(code) globally
