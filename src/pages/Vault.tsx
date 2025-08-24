@@ -210,7 +210,7 @@ function Vault() {
     // spicy tail
     setTimeout(() => confetti({ ...base, particleCount: 35, spread: 88, startVelocity: 55 }), 180);
   }
-  // ----------------------------------------------------------------
+  // 
 
   useEffect(() => {
     // rotating phrases (only if motion is allowed)
