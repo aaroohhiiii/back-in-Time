@@ -35,7 +35,7 @@ export function runCommand(cmd: string): string[] {
         '  THEME    - Cycle accent colors',
         '  CLEAR    - Clear terminal',
         '',
-        'Further diagnostics: view-source & /logs'
+        
       ];
       
     case 'ABOUT':
