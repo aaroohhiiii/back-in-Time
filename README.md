@@ -1,6 +1,6 @@
-# GDG Terminal System
+# Back-In-Time
 
-A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Features a console-based unlock system, Konami code easter eggs, and a fully accessible design system.
+A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Features a console-based unlock system,  and a fully accessible design system. THE cute little videos enhance the visual effects of the interface.
 
 ## 🎨 Design System
 
@@ -33,6 +33,7 @@ A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Fea
 ## 🔐 Secret Key Methodology
 
 ### The Three-Step Process
+1. **intial Anomaly** : Hover your the vudeos to discover first hint.
 1. **Discovery**: Navigate to `/logs?filter=cypher` to find the breadcrumb
 2. **Console Access**: Open browser developer console (F12)
 3. **Unlock**: Execute `unlock('ZXJpc19uZW9uX2tleQ==')` in the console
@@ -40,8 +41,8 @@ A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Fea
 ### Difficulty Knobs
 - **Easy**: Direct console hint in `/vault` page
 - **Medium**: HTML source comment in `index.html`
-- **Hard**: Konami code sequence (↑↑↓↓←→←→BA) reveals trail
-- **Expert**: Decode base64 string manually
+- **Hard**: decoding 'Ctrl + O' hint 
+
 
 ### Testing with Peers Checklist
 - [ ] Can navigate to `/logs?filter=cypher` independently
@@ -62,7 +63,7 @@ A retro-cyberpunk terminal interface built with React, Vite, and TypeScript. Fea
 ### Reduced Motion Support
 - **`.no-glitch` Class**: Automatically applied when `prefers-reduced-motion` is set
 - **Instant Rendering**: Typewriter effects become instant
-- **Animation Disabling**: All glitch and scanline effects respect user preference
+
 - **Performance**: Smooth experience for motion-sensitive users
 
 ### Semantic Structure
@@ -125,8 +126,8 @@ npm run build
 
 ## 🔍 Easter Eggs & Secrets
 
-### Konami Code
-- **Sequence**: ↑↑↓↓←→←→BA
+### Video Code
+
 - **Trigger**: Works from anywhere in the app
 - **Reward**: Modal revealing the breadcrumb trail
 
@@ -140,10 +141,6 @@ npm run build
 /logs → ?filter=cypher → /vault → console unlock
 ```
 
-## 📝 Notes
-
-### robots.txt Breadcrumb
-The `public/robots.txt` file contains a hidden reference to the breadcrumb system, providing an additional layer of discovery for users who explore the source code.
 
 ### Console Integration
 The unlock system is designed to work seamlessly with browser developer tools, encouraging users to explore and understand web technologies while solving the puzzle.
@@ -169,3 +166,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Remember**: The real unlock is in `/vault`, not in the 404 page! The 404 is just a decoy to keep you exploring. 🕵️‍♂️
+
